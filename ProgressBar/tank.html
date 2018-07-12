@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Production</title>
+    <link rel="stylesheet" href="bs4/bootstrap.min.css">
+    <style>
+    #graphbar{
+        transition:width 3s;
+        -moz-transition:width 3s; /* Firefox 4 */
+        -webkit-transition:width 3s; /* Safari and Chrome */
+        -o-transition:width 3s;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-12">
+
+
+        <div class="jumbotron bg-dark text-light">
+
+        <table class="table table-dark table-responsive" style="width:600px">
+                <th class="lead">Measurement in Litres</th>
+                <tr>
+                    <td>Tank Average :</td><td><h1 id="average"></h1></td>
+                </tr>
+
+                <tr>
+                    <td>Tank 1 :</td><td><p id="demo1"></p></td>
+                </tr>
+
+                <tr>
+                    <td>Tank 2 :</td><td><p id="demo2"></p></td>
+                </tr>
+
+                <tr>
+                    <td>Tank 3 :</td><td><p id="demo3"></p></td>
+                </tr>
+
+                <tr>
+                    <td>Tank 4 :</td><td><p id="demo4"></p></td>
+                </tr>
+
+                <tr>
+                    <td>Tank 5 :</td><td><p id="demo5"></p></td>
+                </tr>
+
+                <tr>
+                    <td>Tank 6 :</td><td><p id="demo6"></p></td>
+                </tr>
+
+            
+                
+        </table>
+
+
+        Graph:
+        <div class="bg-light" style="max-width: calc(1000px);height:calc(100px)">
+            <div id="graphbar" class="bg-primary"  style="height:inherit">
+                
+            </div>
+        </div>
+        
+
+        <script>
+            
+                change(); //tank values
+                function change(){
+                    var litres;
+                    var  t1 = Math.floor(Math.random() * 100);
+                    var  t2 = Math.floor(Math.random() * 100);
+                    var  t3 = Math.floor(Math.random() * 100);
+                    var  t4 = Math.floor(Math.random() * 100);
+                    var  t5 = Math.floor(Math.random() * 100);
+                    var  t6 = Math.floor(Math.random() * 100);
+
+
+                    litres = document.getElementById("average").innerHTML = ((t1+t2+t3+t4+t5+t6)/6).toPrecision(4);
+                    document.getElementById("demo1").innerHTML = t1;
+                    document.getElementById("demo2").innerHTML = t2;
+                    document.getElementById("demo3").innerHTML = t3;
+                    document.getElementById("demo4").innerHTML = t4;
+                    document.getElementById("demo5").innerHTML = t5;
+                    document.getElementById("demo6").innerHTML = t6;
+                    document.getElementById("graphbar").style.width= "calc("+litres*10+"px)";
+                    setTimeout(change,3000);
+
+                }
+
+        </script>
+        
+
+        </div>
+
+
+    </div>
+    </div>
+    </div>
+<script src="bs4/jquery-3.3.1.slim.min.js"></script>
+<script src="bs4/popper.min.js"></script>
+<script src="bs4/bootstrap.min.js"></script>
+
+</body>
+</html>
