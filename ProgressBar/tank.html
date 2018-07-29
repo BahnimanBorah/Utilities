@@ -8,6 +8,9 @@
     <title>Production</title>
     <link rel="stylesheet" href="bs4/bootstrap.min.css">
     <style>
+        body{
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+        }
     #graphbar{
         transition:width 3s;
         -moz-transition:width 3s; /* Firefox 4 */
@@ -22,11 +25,21 @@
         margin-top: 300%;
         transform: translateY(-100%);
     }
+    #graphbarcontainer{
+        background-image: linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%);
+    }
     </style>
 </head>
 <body>
-    <div class="container">
-    <div class="row jumbotron bg-dark">
+    <div class="container" style="margin-top: 5%">
+            <h1 class="display-1">Sensor Data:</h1> 
+            <p class="text-light">The following data is a pictorial representation of
+            live sensor data value based bar graphs and their respective volumes.</p>
+            <p class="text-light">
+                    The project is inspired by 
+                    <a class="text-danger" href="https://en.wikipedia.org/wiki/SCADA">SCADA</a> control systems.
+            </p>
+    <div class="row jumbotron bg-dark"  style="box-shadow: 5px 10px 18px black">
     <div class="col-lg-6">
 
 
@@ -70,7 +83,8 @@
 
 
     </div>
-    <div class="col-lg-6 jumbotron">
+    <div class="col-lg-6 jumbotron" id="graphbarcontainer">
+        <p>Data Patterns</p>
 
             <div class="row text-dark lead" style="bottom: 0;height: calc(200px)">
                 <div class="col-lg-2"><div class="tankers bg-danger rounded" id="tank1"></div></div>
@@ -88,7 +102,12 @@
                     <div class="col-lg-2"><p>T5</p></div>
                     <div class="col-lg-2"><p>T6</p></div>
             </div>
-            <p class="text-primary">Live Data</p>
+            <p>Supervisory control and data acquisition (SCADA) is a control system architecture
+                 that uses computers, networked data communications and graphical user interfaces for high-level process supervisory
+                  management, but uses other peripheral devices such as programmable logic controllers and discrete PID controllers to
+                   interface with the process plant or machinery. The operator interfaces which enable monitoring and the issuing of process
+                    commands, such as controller set point changes, are handled through the SCADA computer system. However, the real-time control logic
+                 or controller calculations are performed by networked modules which connect to the field sensors and actuators.</p>
 
 
         </div>
